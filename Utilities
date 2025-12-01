@@ -1,0 +1,4 @@
+# ffmpeg
+on Windows, convert all files with .mp4, to .mp3
+Download the .zip from here: https://www.gyan.dev/ffmpeg/builds/, then extract it, move the binary file to a certain location, then add it to your env path.
+for %f in (*.mp4) do ffmpeg -i "%f" -c:a libmp3lame "%f.mp3"
