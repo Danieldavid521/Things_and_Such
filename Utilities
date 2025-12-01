@@ -1,10 +1,13 @@
-# mutli media
+# file manipulation
 ffmpeg
 on Windows, convert all files with .mp4, to .mp3
 Download the .zip from here: https://www.gyan.dev/ffmpeg/builds/, then extract it, move the binary file to a certain location, then add it to your env path.
 for %f in (*.mp4) do ffmpeg -i "%f" -c:a libmp3lame "%f.mp3"
 % for i in *.webm; do ffmpeg -i "$i" "${i%.*}.mp4"; done
 for file in *.mp4; do ffmpeg -i "$file" "${file%mp4}mp3"; done
+
+7zip command line
+7z a(add command) -t7z -r destinationlocation.7z sourcefiles\*.*
 
 # network
 NMAP
