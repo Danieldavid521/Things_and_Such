@@ -1,0 +1,26 @@
+# Samba Share
+
+sudo apt update
+sudo apt install samba
+
+whereis samba
+mkdir /home/<username>/sambashare/
+sudo nano /etc/samba/smb.conf
+
+[sambashare]
+    comment = Samba on Ubuntu
+    path = /home/username/sambashare
+    read only = no
+    browsable = yes
+
+sudo service smbd restart
+sudo ufw allow samba
+
+sudo smbpasswd -a username
+
+Install Ubuntu server
+Setup DHCP with netplay
+Mount /dev/sdb1 to /home/Daniel/sambashare
+Install samba
+Reformat drive from ext4 to nfs
+Tried to set files and samba share folder owned by user:group
