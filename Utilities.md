@@ -9,6 +9,15 @@ for /f "tokens=1 delims=." %a in ('dir /B *.webm') do ffmpeg -i "%a.webm" -vn -a
 
 #yt-dlp.exe -t mp3 "url"
 
+# git
+Git clone <url>
+Cd to repo
+Git checkout -b reason_for_update
+*make changes*
+Git add *
+Git commit -m "comment for pull request"
+Git push origin reason_for_update
+
 7zip command line
 7z a(add command) -t7z -r destinationlocation.7z sourcefiles\*.*
 
