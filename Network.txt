@@ -1,0 +1,12 @@
+HTTP requires a client/server model. web server software could be IIS, Apache, or Ngingx. http GET requests respond with a 200 OK if everything works. before we can request a webpage, a session needs to be established(TCP)
+
+TCP - 3 way handshake, syn,synack,ack(this is NOT HTTP yet). Before TCP can  work, we need IP.before IP and work, we need a mediam to move packets, which is ethernet
+
+OSI MODEL <br>
+physical  | *wires, glass, Radio Freq* <br>
+data Link *Ethernet | ppp, ethernet, 802.11* <br>
+network  *IP | ICMP *<br>
+transport *TCP & UDP* <br>
+session <br>
+presentation <br>
+application *HTTP telnet, ssh, ftp, sftp, snmp,smtp,imap* <br>

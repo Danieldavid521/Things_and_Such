@@ -1,0 +1,2 @@
+# checking the checksum
+shasum -a 512 apache-tomcat-10.1.18.tar.gz

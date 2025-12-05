@@ -16,3 +16,5 @@
         * What about Optionally use Shiny to drive visualizations dynamically.
     * The overall rule about the dashboard layout is that a first-level section generates a page, a second-level section generates a column (or a row), and a third-level section generates a box (that contains one or more dashboard components). Below is a quick example
 #shiny
+shiny is multi threaded, while R is single threaded.
+Nginx is the web server

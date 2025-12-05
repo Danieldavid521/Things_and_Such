@@ -1,0 +1,16 @@
+ #API keys
+ each app, should get its own API key
+ we have to register developers for our apps
+ good idea to include api key in header vs in query
+ #Apigee API proxy
+ the API proxy allows us to keep our backend secure
+ API proxy allows security,quotas,caching,transformations,error handling, and monitoring requests
+ usually we bundle multiple API proxies into 1 API Product
+ #API Intro
+ proxy = HTTP endpoint
+ we add policies to the api proxy, not in the backend service
+ #analytics
+ Analyze -> API metrics -> API proxy performance
+ #monitoring
+ notifications,API availbility,time to diagnose, error codes,invesitgate
+ 
