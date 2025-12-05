@@ -1,3 +1,8 @@
+DDL creating,alter, delete tables
+DML insert, update, delete
+DQL select
+DCL alter grant revoke
+
 SELECT * 
 FROM PRODUCT
 WHERE (Category = 'Electronics')
