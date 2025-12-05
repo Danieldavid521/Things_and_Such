@@ -1,5 +1,18 @@
 #R
 
 # Rmarkdown
-
+* 
+    * 2 types of interactive R markdown documents
+        * HTML widgets framework
+        * Shiny framework
+    * Although HTML widgets are based on JavaScript, the syntax to create them in R is often pure R syntax.
+    * You may use Shiny to run any R code that you like in response to user actions. Since web browsers cannot execute R code, Shiny interactions occur  on the server side and rely on a live R session. By comparison, HTML widgets do not require a live R session to support them, because the interactivity comes from the client side (via JavaScript in the web browser).
+    * HTML widgets and Shiny elements rely on HTML and JavaScript. 
+    * With the flexdashboard package, you can
+        * Use R Markdown to publish a group of related data visualizations as a dashboard.
+        * Embed a wide variety of components including HTML widgets, R graphics, tabular data, gauges, value boxes, and text annotations.
+        * Specify row or column-based layouts (components are intelligently re-sized to fill the browser and adapted for display on mobile devices).
+        * Create story boards for presenting sequences of visualizations and related commentary.
+        * What about Optionally use Shiny to drive visualizations dynamically.
+    * The overall rule about the dashboard layout is that a first-level section generates a page, a second-level section generates a column (or a row), and a third-level section generates a box (that contains one or more dashboard components). Below is a quick example
 #shiny
