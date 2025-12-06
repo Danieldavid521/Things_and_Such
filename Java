@@ -1,0 +1,5 @@
+#Tomcat
+tomcat default thread max is 200, that means, there is a chance 200 different instances 
+could be executing the same method at the same time.
+volatile access type, and synchronized method block are ways to help data consistancy
+synchrnized code blocks or methids implemented incorrectly can result in deadlocks

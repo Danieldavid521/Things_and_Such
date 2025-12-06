@@ -3,6 +3,15 @@ DML insert, update, delete
 DQL select
 DCL alter grant revoke
 
+SQL notes
+indexes are pointers to the original database
+after creating an index, if you add,change,delete rows, you don't have to re-sort, just update the index.
+you can update an index faster than re-sort a table
+primary key is the fastest way to find info for a table.
+PK should always be indexed per table
+don't index on fields that don't differeniate records from others
+
+
 SELECT * 
 FROM PRODUCT
 WHERE (Category = 'Electronics')

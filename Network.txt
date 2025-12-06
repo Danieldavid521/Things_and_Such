@@ -10,3 +10,17 @@ transport *TCP & UDP* <br>
 session <br>
 presentation <br>
 application *HTTP telnet, ssh, ftp, sftp, snmp,smtp,imap* <br>
+
+nmap -v -oN /Users/daniel/Desktop/nmap.txt 192.168.1.0/24
+
+
+# tplinkusb
+reinstalled the driver with this commands:
+
+sudo apt install git dkms
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo make dkms_install
+If you don't hace permission try to execute:
+
+chmod 777 rtl8812au
