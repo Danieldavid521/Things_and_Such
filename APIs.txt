@@ -1,3 +1,4 @@
+ #Apigee
  #API keys
  each app, should get its own API key
  we have to register developers for our apps
@@ -13,4 +14,65 @@
  Analyze -> API metrics -> API proxy performance
  #monitoring
  notifications,API availbility,time to diagnose, error codes,invesitgate
+ 
+ 
+# XML
+XSL
+Used for high end publishing
+DTDXML names are casesenstive, <Para><para><pARA> are all different
+
+Namespaces group of element and attribute names
+XSLT depends on the namespaces to distringush between data and instructions for processing
+
+Namespaces need to be declared in the document before you can use it
+Xmlns: attribute is a url for the organization maintaining the namespace
+Entity consists of a name and a value
+Predefined character entities
+XML supports unicode
+External entities are linking mechanisms, the connect parts of a document that may be on another system
+
+Unparsed entities are used to import graphics, sound files, images
+CDATA
+Well formed XML guarantees some minimum standards for data quality
+
+Chapter 3 Connecting resources with Links
+
+Simple XML resources are unidirectional
+
+URI start with a scheme
+URI uniform resource identifier
+
+XML they are fragment identifier/HTML they are called anchors
+location indpependent shceme for finding resources leminate the prolem of breaking links
+FPI - Formal public identifier
+heirarchical naming structure can be used to match actual structure of the document
+
+Xpointer - special extension to a URL that allows it to reach points deep inside any XML document
+XPointer can target any elemtn, unlike HTML the target is always <a>
+Xlink, minimum required attribute is 'type'
+XHTML comes in multiple flavors
+
+Chapter 4 Presentation
+
+Using stylesheets you can keep the markup pure and focused wth out polluting it with a ppearnace details
+
+1 styleseet for hundresds of documents, this allows the document to be device independent
+cascading stylesheets incoroprate multiple different sources
+rule of thumb- the property from the rule with the most specific selector will win
+ CSS can't create any kind of sctucture other than that of the XML source file
+ XSLT
+ 
+ Chapter 5 document model
+ 
+ The process of formally defining a language in XML is called the document modeling
+ Checkbook example
+ write good comments
+ DTD don't have to exist in 1 file
+ 
+ Other formats like Microsoft Word and HTML rely so heavily on presentational properties
+ that it is difficult to see structure making it almost impossible to audo adjust anything without damaging the content.
+ 
+ XLST
+ with web documents, the transoformation is performed either on the server side or the client side,
+ some web servers detect a stylesheet delcaration and transform the document as it's served out
  

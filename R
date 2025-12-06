@@ -18,3 +18,123 @@
 #shiny
 shiny is multi threaded, while R is single threaded.
 Nginx is the web server
+
+
+shinybrain allows for snapshots of shiny code
+
+quarto:
+blog - create new project
+quarto publish command for quartopub
+themeing in shiny
+- bslib and thematic
+- thematic changes the shiny theme and the base R plots
+
+documentation rots
+some documentation comes with roles 
+pasting commands for readers to use, removes typing mistakes
+
+Class tells us the type
+> class(foo)
+
+TRUE && FALSE = FALSE
+ 
+TRUE || FALSE = TRUE
+
+!TRUE = FALSE
+
+TRUE && 1 = TRUE,  boolean + any number not 0 = TRUE
+TRUE && 0 = FALSE, boolean + 0 = FALSE
+
+
+lang.domain <- "homework" 
+toupper(lang.domain)
+
+substr(lang.domain, 1, 4)
+
+paste("do your", lang.domain, "!!!")
+
+
+# basic flow control
+
+if statements evaluate a boolean logical value
+
+we can have multiple if statements
+
+if((2+1==2) && (2*2==4)){
+  print("this statement executed")}
+}
+
+
+
+if((2+1==2) && (2*2==4)){
+  print("this statement executed")
+} else{
+ print("not here")
+}
+
+
+# Vectors
+
+Vectors - an ordered collectino of values of the same atomic data type
+
+c() - c standards for "combine"
+
+pay attention when TRUE and FALSE, which in a vector would be logical values, but when put with characters, would be "TRUE", and "FALSE", and will be handled differently in R. Also when we use TRUE and FALSE represented as  1 and 0, or sometimes "1", and "0", we will  need to have a good understanding of how to convert elements and vectors into different types for different functions and purposes.
+
+### subsetting/indexing
+
+subsetting, is extract 1 or more elements from a vector. in R vectors start at index 1, and go to n. sometimes vectors can have NA values in them as well, using an index position.
+
+
+our.vector <- c(8,6,7,5,3,0,9)
+our.vector[length(our.vector)]
+
+the code above, we used a function length(), in the subscript operator our.vector[]. If we subset something that doesn't exist, R will give us a "NA", NOT AVAILABLE.
+
+# length of the vector
+length(our.vector)
+# indexing the 12344 element in the 9 element vector
+our.vector[12344]
+
+A super power of R is that we can use vectors to subset other vectors. Ex. extracting values of a column that match/deny another column values or any other operation.
+
+### sequencing
+
+seq(50,30, by=-1)
+1:10
+
+This allows us to get a consective list of elements from a vectore
+our.vector[1:7]
+
+Remember, Lots of R functions accept vectors as arguments, called vectorized functions
+sum()
+mean()
+sd()
+
+mean(our.vector,  na.rm = TRUE)
+
+we can also get sums of logical vectors
+
+sum(c(TRUE, TRUE, FALSE))
+
+summing a logical vector can be a count of the values
+
+sum(is.na())
+
+When we use a boolean operators, we get back a vector of the same length as the one we operated on.
+
+how many values are over an amount?
+
+sum(our.vector > 5)
+
+below allows us to change just an individual element in a vector
+
+vector[is.na(vector)] <- 0 
+
+
+
+# Files
+ifelse(!dir.exists("Data"), dir.create("Data"), "Folder exists already")
+file.exists("filename.extension")
+list.files(recursive = TRUE)
+list.files (pattern = "csv$")

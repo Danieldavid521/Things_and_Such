@@ -1,0 +1,88 @@
+
+
+SELECT * 
+FROM PRODUCT
+WHERE (Category = 'Electronics')
+OR (Category = 'Books' AND UnitPrices < 10);
+
+SELECT *
+FROM EMPLOYEE
+WHERE DEPARTMENT IN ('Sales', 'engineering', 'shippping')
+
+SELECT *
+FROM EMPLOYEE
+WHERE DEPARTMENT NOT IN ('Sales', 'engineering', 'shippping')
+
+SELECT *
+FROM PRODUCT
+WHERE YearBuilt BETWEEN 2022 and 2024
+AND weight BETWEEN 100 and 200;
+
+SELECT * 
+FROM STOCK
+WHERE ItemName like '%paper%'
+
+SELECT *
+FROM EMPLOYEE
+WHERE middleinitial IS NOT NULL;
+
+SELECT SUM(minutes_watched)
+FROM sessions
+WHERE user_ID = '123123'
+
+SELECT COUNT(*), Category
+FROM PRODUCT
+GROUP BY Category;
+
+SELECT COUNT(*), Category
+FROM PRODUCT
+WHERE STATUS <> 'discontinued'
+GROUP BY Category;
+
+SELECT COUNT(*), Category
+FROM PRODUCT
+WHERE STATUS <> 'discontinued'
+GROUP BY Category;
+HAVING COUNT(*) > 100;
+
+SELECT PRODUCTname, list price
+FROM PRODUCT
+WHERE ListPrice > (SELECT AVG(LISTPRICE) FROM PRODUCT);
+
+WHERE is before data is groups, HAVING is after data is grouped
+
+SELECT customerid , COUNT(*) AS orders
+from orders
+group by customerid 
+HAVING COUNT(*) > 2;
+
+#joins
+
+SELECT FirstName,LastNam, Employee.departmentID, department.departmentID
+FROM EMPLOYEE
+Join Department
+on employee.departmentID=department.departmentID
+
+insert into statement appends data to an existings table
+SELECT INTO statement is used in SQL SERVER to copy one table to a new table * great way to make a copy of a table for experimentation 
+
+#getting a distribution of orders per customerid
+SELECT orders, count(*) as num_customers
+FROM
+(SELECT customer_id,count(order_id) as orders
+from orders
+group by 1)
+a group by 1;
+
+#identifying dupe records
+SELECT column1, count(*) as records
+FROM...
+GROUP BY 1,2,3...
+HAVING COUNT(*) >1;
+
+CASE allows to add categories in the data that are not there before
+
+#concat dates
+(year || '-' || month || '-' || day)::date
+
+cast(concat(year, '-', month, '-', day) as date)

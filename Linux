@@ -1,19 +1,3 @@
-# Samba Share
-sudo apt update
-sudo apt install samba
-whereis samba
-mkdir /home/<username>/sambashare/
-sudo nano /etc/samba/smb.conf
-[sambashare]
-    comment = Samba on Ubuntu
-    path = /home/username/sambashare
-    read only = no
-    browsable = yes
-sudo service smbd restart
-sudo ufw allow samba
-
-sudo smbpasswd -a username
-
 Install Ubuntu server
 Setup DHCP with netplay
 Mount /dev/sdb1 to /home/Daniel/sambashare
@@ -21,48 +5,19 @@ Install samba
 Reformat drive from ext4 to nfs
 Tried to set files and samba share folder owned by user:group
 
-# Ubuntu fresh install notes
-sudo apt install gdebi
-sudo apt-get install vlc
-sudo snap install eclipse --classic
-#setting java home below
-JAVA_HOME="/usr/lib/jvm/open-jdk"
-source /etc/environment
-echo $JAVA_HOME
-/usr/lib/jvm/default-java
 
-install R
-sudo apt-get install r-base
-sudo apt-get install r-base-dev
-sudo chown root:root /usr/lib/rstudio/chrome-sandbox
-sudo chmod 4755 /usr/lib/rstudio/chrome-sandbox
+key virtual system information is in /proc, and are virtual so are dynamic 
 
+-meminfo
+-cpuinfo
 
-installing maven
-wget https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.8-bin.tar.gz
-tar -xvf apache-maven-3.9.8-bin.tar.gz
-mv apache-maven-3.9.8 /opt/
-M2_HOME='/opt/apache-maven-3.9.8'
-PATH="$M2_HOME/bin:$PATH"
-export PATH
-Relaunch the terminal or execute source .profile to apply the changes.
-Execute mvn -version
+top - single auto updated for CPU and men
+free -h 
+df -ht
 
-#installing activemq
-wget https://www.apache.org/dyn/closer.cgi?filename=/activemq/5.18.5/apache-activemq-5.18.5-bin.tar.gz&action=download
-tar -xzf apache-activemq-5.17.0-bin.zip
+masking a service is a fail proof command to help stop the service from being accidentally started/stopped
 
-install homebrew
+Berkely internet name domain - most used DNS service
 
-installing SQL server
-wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-default username: sa
-password: assigned at setup
-
-installing R in linux mint
-sudo apt install --no-install-recommends software-properties-common dirmngr
-wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
-sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
-sudo apt install --no-install-recommends r-base
-#might have to update && upgrade
+port 53 is for DNS lookups
+port 953 is for controlling DNS 

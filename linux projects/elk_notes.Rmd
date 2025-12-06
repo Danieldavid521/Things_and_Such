@@ -1,0 +1,54 @@
+---
+title: "ElasticSearch"
+author: "Document Author"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+## ElasticSearch
+
+Perform CRUD operatiosn with elasticsearch and kibana
+
+Databases are not good at search result recommendations
+
+1 instance of elasticsearch is Node-1, with a unique ID and name, and it belongs to a single cluster
+
+Data is stored as a document in JSON
+
+sharding gives superpowers
+
+name the cluster and node to something meaningful to the application/support
+
+ELK doesn't do joins or handle transactions
+
+logstash - get, pipeline, send data
+
+the libeat libraries know how to get specific data
+
+# Filebeat 
+
+Filebeat runs as a binary, because it was written in GO, so no runtime library needed
+
+There will be multiple files in a single directory for filebeat to harvest. each prospected(input)logs, will get its own harvester thanks to Filebeat
+
+filebeat only does what's in the YAML file
+
+./filebeat test output
+./filebeat test config - runs a syntax command for the filebeat.yml config
+
+./filebeat setup
+
+GET _nodes/stats
+good diagnostic command
+
+sudo chown root filebeat.yml - this needs to be down to get access to the files
+
+x.pack is a security module for ELK, like security(LDAP, users, roles),monitoring(CPU,RAM), alerting, reporting(custom logos, exporting csv), machine learning(abnormalit detection), forecasting
+
+
+
+
+

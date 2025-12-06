@@ -1,0 +1,28 @@
+DDL creating,alter, delete tables
+DML insert, update, delete
+DQL select
+DCL alter grant revoke
+
+SQL notes
+indexes are pointers to the original database
+after creating an index, if you add,change,delete rows, you don't have to re-sort, just update the index.
+you can update an index faster than re-sort a table
+primary key is the fastest way to find info for a table.
+PK should always be indexed per table
+don't index on fields that don't differeniate records from others
+
+better to use catalog.schema.table naming convention for easy organization
+the informatiion schema holds the metadata that describes the various tables
+DDL deals with the structure of the DB(create,alter,drop)
+CREATE can be used for tables, schemas, views, domains and ownership and characte set
+domains are constraints we can apply to column and what they only allow
+you create domains after schemas
+you can alter columns, not just tables
+DML is what handles the data
+some SQL implemtations use + others use ||
+predicates are logical propositoins, ex: the student is a senior
+operators in SQL used to filter rows and columns
+OR,AND,NOt is logical connectives
+count,max,min,sum, avg takes action that draws data rather than from a single row
+when DB users attempt to perform operations on the database, the entire set of istructions is set into a transaction, so when 2 users are trying to access/change the same data, the changes are wrapped into transactions and one user will get to go first via isolation of transactions
+

@@ -1,0 +1,277 @@
+APIs in different domains can have their own uniqie API endpoints
+
+# REST APIs
+
+## IIS
+
+Admin need to know what
+developers need to know why
+
+IIS is HTTP protocol
+
+there are rules to the protocol interaction
+
+HTTP is text that relates to another text
+
+HTTP is suppose to be able to retrieve data from another hard drive on the network
+
+GET,POST,HEAD,PUT,DELETE
+
+GET only needs the URL
+
+POST have "SEND data"/POSTing a form
+
+head - get information
+
+put - place content at the resouce
+
+1xx - informational
+2xx - success 
+3xx - redirection
+4xx - request problem
+5xx - server problem
+
+
+certs are used with public key, and sometimes private key
+
+encoding - changeing the information to republish vs encryption - so no one but the true owners can see a document
+
+sometimes server 5xx errors are covered up by good logging
+
+web browser - inspect on web page, network page
+ 
+http headers are key:value paris
+
+Cookies ARE headers
+
+web3svc is the iis service cmd
+
+inside website, there are file systems
+
+when a windows Web servers gets deployed in puppet, how is the binding handleded?
+
+URL represent the File system, sometimes we want to reference resources that aren't a file system
+
+read errors OUT LOAD
+
+access denied - for who? for what?
+
+when you have a website, the system resources need the right permissions to functions
+
+# domain names
+
+staging.example.com
+notstagin.example.com
+
+-- both websites need certificates
+
+certs are binds to a domain name
+
+port 443 is https
+
+iis express is lightweight and used with visual studio
+
+
+
+HTTP can be used over Telnet
+
+A token being sent on every request is another sign of RESTful API design. REST
+APIs are supposed to be stateless, which means the server should not keep track of its
+requesters.
+
+Table 5-1. HTTP verbs that REST architecture supports
+REST HTTP Verb Usage
+POST Create
+GET Read
+PUT Update/Replace
+PATCH Update/Modify
+DELETE Delete
+
+curl -i -X OPTIONS https://api.mega-bank.com/users/1234
+
+Very few enterprise applications expose
+OPTIONS.
+
+We make a number of HTTP requests against the API, one for each HTTP verb. Most
+servers do not respond to requests that do not map to a valid endpoint
+
+Generally speaking, 1 second (or 1,000 ms in this case) is plenty of time for
+an API to respond.
+you can look at the log output to determine
+which HTTP verbs have an associated endpoint.
+
+It’s usually best to start with common endpoints that can be found on nearly every
+application: sign in, sign up, password reset, etc. These often take a similarly shaped
+payload to that of other apps, since authentication is usually designed based on a
+standardized scheme.
+
+
+Every application with a public web user interface should have a login page. The way
+they authenticate your session, however, may differ. It’s important to know what type
+of authentication scheme you are working with because many modern applications
+
+Table 5-2. Major authentication schemes
+Authentication scheme Implementation details Strengths Weaknesses
+HTTP Basic Auth Username and password sent on
+each request
+All major browsers
+support this natively
+Session does not expire;
+easy to intercept
+HTTP Digest Authentication Hashed user
+name:realm:password sent
+on each request
+More difficult to
+intercept; server can
+reject expired tokens
+Encryption strength
+dependent on hashing
+algorithm used
+OAuth “Bearer” token-based auth; allows
+sign in with other websites such as
+Amazon → Twitch
+Tokenized permissions
+can be shared from one
+app to another for
+integrations
+Phishing risk; central site
+can be compromised,
+compromising all
+connected apps
+send authentication tokens with every request.
+
+# finding 3rd party dependcies
+
+focus on the method of integration
+
+CVE database
+
+# detecting client side Frameworks
+
+jquery used to patch Javascript funtionality
+bootstrap is a css look and feel for websites
+
+What are the exact version numbers of frameworks?
+Always pay attention to the version numbers of frameworks
+
+# detecting server side frameworks
+
+Read server headers
+
+Server 404 errors can tell you a lot about the web framework
+
+Ruby on Rails is an MVC, seperating the data and the UI for multuple views of that data
+
+# find weak points in the app archetiture 
+
+Good documentation and note keeping in crucial
+
+List API endpoints by HTTP verb
+
+list the type of authentication for the webapp
+
+domains used by the web application
+
+Taking a step back, regular expressions are often used in web applications to validate
+form fields and make sure the user is inputting text that the server expects. Often this
+means only allowing users to input characters into a password field that the applica‐
+tion has opted to accept, or only put a maximum number of characters into a com‐
+ment so the full comment will display nicely when presented in the UI.
+
+look for occur‐
+rences in a web application that are resource intensive. A nonextensive list could be:
+• Any operation you can confirm operates synchronously
+• Database writes
+• Drive writes
+• SQL joins
+• File backups
+• Looping logical operations
+
+time an API call from start to finish and average it over 100 calls
+
+Most botnet-based DDoS attacks will make requests directly
+against a server’s IP address, and not against any specific API endpoint using UDP.
+
+CPU and RAM can get DOSed
+
+# arcehccecutre of methods of integrataion
+
+Or it can involve run‐
+ning the OSS code on its own server and setting up an API for one-way communica‐
+tion from the main application to the OSS integration
+
+package managers allow for integration between propreitary and OSS
+
+removing outdated package versions can cut down on bandwidth and build time
+
+maven is to Java what NPM is to javascript
+
+maven predates git version control
+
+# securing web apps
+
+
+We are storing credentials.
+• We are storing personal identifier information.
+• Users have elevated privileges compared to guests.
+• Users can search through existing items.
+• We are storing financial data.
+
+how do we handle cookies?
+
+Search engine: How is the search engine implemented? Does it draw from the
+primary database as its single source of truth or use a separate cached database?
+
+This means we must allow users to log in, as well as be able to differentiate
+among different tiers of users when determining what actions these users are allowed.
+
+because we are storing credentials and support a login flow, we know
+there are going to be credentials sent over the network. These credentials must also be
+stored in a database, otherwise the authentication flow will break down.
+
+how do we handle data in transit?
+
+TSL cannot inter‐
+polate with older versions of SSL due to the amount of architectural differences
+between the two
+
+The way TLS is implemented is generally
+server specific, but every major web server software package offers an easy integra‐
+tion to begin encrypting web traffic
+
+entropy—the amount of randomness and uncertainty.
+You want passwords with a lot of entropy
+
+hashing credentials
+
+modern hashing algorithms are extremely efficient. Today’s hashing algorithms
+can represent multiple-megabyte strings of characters in just 128 to 264 bits of data.
+
+"Crypt” is the name of the default hashing function that shipped with Unix OSs.
+
+ELK search is is based on top of Apache’s Solr search
+engine project.
+
+static analysis is the first autmation you should write.
+
+find where SQL injections could be the most vulnerable
+
+Remember that if data is persisting between devices and sessions, it is
+either stored in server-side memory, disk (logs), or in a database.
+
+Prepared statements for SQL
+
+Keep a record of logs for the server and record how long requests take
+
+keep times of when the job start and finish
+
+modeling a dependency tree
+
+
+
+
+
+
+
+
+

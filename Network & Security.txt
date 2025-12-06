@@ -140,3 +140,43 @@ badopsec
 We are in an encryption rennisiance
 Sovereign firewalls are for censorships, and block the latest TOR version, and just sell software updates
 RSA 1024 was important in 2003, but not today
+
+HTTP requires a client/server model. web server software could be IIS, Apache, or Ngingx. http GET requests respond with a 200 OK if everything works. before we can request a webpage, a session needs to be established(TCP)
+
+TCP - 3 way handshake, syn,synack,ack(this is NOT HTTP yet). Before TCP can  work, we need IP.before IP and work, we need a mediam to move packets, which is ethernet
+
+OSI MODEL <br>
+physical  | *wires, glass, Radio Freq* <br>
+data Link *Ethernet | ppp, ethernet, 802.11* <br>
+network  *IP | ICMP *<br>
+transport *TCP & UDP* <br>
+session <br>
+presentation <br>
+application *HTTP telnet, ssh, ftp, sftp, snmp,smtp,imap* <br>
+
+nmap -v -oN /Users/daniel/Desktop/nmap.txt 192.168.1.0/24
+
+
+# tplinkusb
+reinstalled the driver with this commands:
+
+sudo apt install git dkms
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo make dkms_install
+If you don't hace permission try to execute:
+
+chmod 777 rtl8812au
+
+network protocols
+What is koberos for?
+large network with server and clients(MS AD)
+previous security of koberos was just signing in with IPs 
+TGS Ticket Granting Service
+Kerberos client key is just as good as their password
+KDC does authentication, but ACL and groups provide authorization
+how do ACL and Kerberos stay synced after users leave the network/company?
+Koberos hashes values and then sends it with a key to confirm no tampering
+SRP and PAKE protocols
+Kerberos initially used DES encryption which has 56bit keys
+There can be duplicate read only KDCs for redundancy
