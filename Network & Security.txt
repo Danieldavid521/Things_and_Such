@@ -180,3 +180,8 @@ Koberos hashes values and then sends it with a key to confirm no tampering
 SRP and PAKE protocols
 Kerberos initially used DES encryption which has 56bit keys
 There can be duplicate read only KDCs for redundancy
+
+# Certificates X.509
+certs are linked to an identity, and has an issuer
+if you trust the issuer, you trust the cert
+CA root certs are self signed

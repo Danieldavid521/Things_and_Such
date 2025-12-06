@@ -3,3 +3,38 @@ tomcat default thread max is 200, that means, there is a chance 200 different in
 could be executing the same method at the same time.
 volatile access type, and synchronized method block are ways to help data consistancy
 synchrnized code blocks or methids implemented incorrectly can result in deadlocks
+by default, need to update /etc/default/tomcat7  file to update port 8080
+ROOT folder in Tomcat is what servers the main page
+
+hibernate - ORM(object persistence framework) framework 
+spring - general purpose framework(framework of frameworks)
+struts - mvc framework
+
+framework
+application
+java
+
+The spring archecture needs to be built in real time per test with dependcies managed
+
+you developer the business logic, then the framework provides routine code that is needed
+
+#spring framework components
+
+- Batch processing 
+- built in security - logins,role management, encryption
+
+JMS APIs to interact with MQ Rabbit
+JMX?
+The "core" part of a Spring framework is Java bean objects
+AOP - aspect Object programming - enables implementation of cross cutting routines, which drastically reduce duplicate of code
+
+minimize the code used to interact with DB
+
+# dependencies injection
+
+the framework creates the object for us
+beanfactory is spring dependency injection framework, with XML config files
+
+programs have multiple beans
+
+
