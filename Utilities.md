@@ -2,10 +2,10 @@
 ffmpeg
 on Windows, convert all files with .mp4, to .mp3
 Download the .zip from here: https://www.gyan.dev/ffmpeg/builds/, then extract it, move the binary file to a certain location, then add it to your env path.
-for %f in (*.mp4) do ffmpeg -i "%f" -c:a libmp3lame "%f.mp3"
-for i in *.webm; do ffmpeg -i "$i" "${i%.*}.mp4"; done
-for file in *.mp4; do ffmpeg -i "$file" "${file%mp4}mp3"; done
-for /f "tokens=1 delims=." %a in ('dir /B *.webm') do ffmpeg -i "%a.webm" -vn -ab 128k -ar 44100 -y "%a.mp3"
+- for %f in (\*.mp4) do ffmpeg -i "%f" -c:a libmp3lame "%f.mp3"
+- for i in \*.webm; do ffmpeg -i "$i" "${i%.*}.mp4"; done
+- for file in *.mp4; do ffmpeg -i "$file" "${file%mp4}mp3"; done
+- for /f "tokens=1 delims=." %a in ('dir /B *.webm') do ffmpeg -i "%a.webm" -vn -ab 128k -ar 44100 -y "%a.mp3"
 
 # creating a concat file
 Below ps script removes all apastrophes in current and all child folders and removes them for the concat job to work
