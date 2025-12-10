@@ -8,6 +8,8 @@ for file in *.mp4; do ffmpeg -i "$file" "${file%mp4}mp3"; done
 for /f "tokens=1 delims=." %a in ('dir /B *.webm') do ffmpeg -i "%a.webm" -vn -ab 128k -ar 44100 -y "%a.mp3"
 
 # creating a concat file
+Below ps script removes all apastrophes in current and all child folders and removes them for the concat job to work
+Get-ChildItem -Filter "*'*" -Recurse | Rename-Item -NewName { $_.Name.Replace("'", "") }
 # found that this exact command fails if there is a "'" in a filename in the directory
 (for %i in (*.wav) do @echo file '%i') > mylist.txt
 ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.wav

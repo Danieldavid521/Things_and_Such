@@ -1,0 +1,69 @@
+Redhat 8.1, 4GB RAM, 1 CPU 2 cores
+sudo subscription-manager repos --enable codeready-builder-for-rhel-8-$(arch)-rpms
+sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo yum install epel-release
+sudo yum install yum-utils
+
+#yum is older version of dnf
+sudo yum install R 
+
+sudo su - -c "R -e \"install.packages('shiny', repos='https://cran.rstudio.com/')\""
+
+wget https://download3.rstudio.org/centos8/x86_64/shiny-server-1.5.23.1030-x86_64.rpm
+
+sudo yum install --nogpgcheck shiny-server-1.5.23.1030-x86_64.rpm
+
+systemctl status shiny-server
+
+
+firewall-cmd --add-port=3838/tcp --permanent
+firewall-cmd --add-port=4151/tcp --permanent
+#bridge the virtual machine on the machine, this will be like having a switch on the LAN
+
+
+#install sql server
+sudo curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/8/mssql-server-2019.repo
+
+sudo yum install -y mssql-server
+sudo /opt/mssql/bin/mssql-conf setup
+sudo firewall-cmd --zone=public --add-port=1433/tcp --permanent
+sudo firewall-cmd --reload
+
+
+
+USE master;
+GO
+sp_configure 'show advanced options', 1;
+GO
+RECONFIGURE WITH OVERRIDE;
+GO
+sp_configure 'contained database authentication', 1;
+GO
+RECONFIGURE WITH OVERRIDE;
+GO
+sp_configure 'show advanced options', 0;
+GO
+RECONFIGURE WITH OVERRIDE;
+GO   
+
+add user masters DB -> logins -> new login
+then go to master security user add user
+
+tcp:IP,port
+
+#other option
+curl -O https://cdn.rstudio.com/r/centos-7/pkgs/R-${R_VERSION}-1-1.x86_64.rpm
+sudo yum install R-${R_VERSION}-1-1.x86_64.rpm
+
+wget https://mirror.las.iastate.edu/CRAN/src/base/R-4/R-4.3.0.tar.gz
+
+# yum group install "Development tools"
+# yum install readline-devel
+# yum install xz xz-devel 
+# yum install pcre pcre-devel
+# yum install libcurl-devel
+# yum install texlive
+# yum install java-1.8.0-openjdk
+# yum install *gfortran*
+# yum install zlib*
+# yum install bzip2-*
