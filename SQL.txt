@@ -26,3 +26,11 @@ OR,AND,NOt is logical connectives
 count,max,min,sum, avg takes action that draws data rather than from a single row
 when DB users attempt to perform operations on the database, the entire set of istructions is set into a transaction, so when 2 users are trying to access/change the same data, the changes are wrapped into transactions and one user will get to go first via isolation of transactions
 
+Security: 
+authentication - approve or disapprove access
+authorization - set of roles assigned that control what data is accessible/modifiabe
+encrypt data at rest(TDE, transparents data encryption vs encrypt data in transit(TLS)
+threats: sql injection, denial of service, unathorized access
+in newer sql server versions, encrypt = TRUE, is boolean, but encrypt = strict is not just boolean.
+Get-SqlErrorLog powershell command
+on the database, columns are encrypted, with a symmetric key generated using an assymetric key
