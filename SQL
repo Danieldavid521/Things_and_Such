@@ -11,6 +11,10 @@ primary key is the fastest way to find info for a table.
 PK should always be indexed per table
 don't index on fields that don't differeniate records from others
 
+#stored procedures
+reduce network traffic doing a group of things at once
+remove users from interacting with tables, as the SP is either able to be ran or not by a person, and talks to tables on their behalf
+
 
 SELECT * 
 FROM PRODUCT

@@ -5,7 +5,9 @@ Install samba
 Reformat drive from ext4 to nfs
 Tried to set files and samba share folder owned by user:group
 
-
+#only allow ssh on port 22 and from local network
+sudo ufw allow 192.168.1.0/24 to any port 22
+ 
 key virtual system information is in /proc, and are virtual so are dynamic 
 
 -meminfo

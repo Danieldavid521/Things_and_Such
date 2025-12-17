@@ -34,3 +34,17 @@ threats: sql injection, denial of service, unathorized access
 in newer sql server versions, encrypt = TRUE, is boolean, but encrypt = strict is not just boolean.
 Get-SqlErrorLog powershell command
 on the database, columns are encrypted, with a symmetric key generated using an assymetric key
+sys.dm_exec_requests
+sys.dm_exec_query_stats
+SELECT TOP 10 total_worker_time, total_logival_reads, query_hash 
+FROM sys.dm_exec_query_stats ORDER BY total_worker_time ;
+
+create event session sloqquerycapture
+ON server add event sqlserver.sql_statement_complete
+WHERE duraction > 50000;
+
+SSNS "watch live data to view events in real time 
+execution plans 
+
+sql server agent for alerts/emails
+powershell install dbatools

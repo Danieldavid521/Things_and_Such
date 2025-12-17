@@ -140,3 +140,14 @@ badopsec
 We are in an encryption rennisiance
 Sovereign firewalls are for censorships, and block the latest TOR version, and just sell software updates
 RSA 1024 was important in 2003, but not today
+
+verify signatures
+#basic checkings
+sha256 hash
+
+#gpg
+you need gpg, the software downloaded file, and a few verification files
+file.exe.asc, verifyhash.asc, & sigfromdevs.asc
+load the dev sig into your keyring
+gpg --import sigfromdev.asc
+gpg --verify file.exe.asc 
